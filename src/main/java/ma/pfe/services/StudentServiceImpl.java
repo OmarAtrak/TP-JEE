@@ -1,19 +1,24 @@
 package ma.pfe.services;
 
 import ma.pfe.dto.StudentDto;
+import ma.pfe.repositories.StudentRepositoryImpl;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class StudentServiceImpl implements StudentService{
+    private final static Logger LOG = LoggerFactory.getLogger(StudentServiceImpl.class);
 
     @Override
-    public long create(StudentDto e) {
-        return 0;
+    public StudentDto create(StudentDto e) {
+        return new StudentDto();
     }
 
     @Override
-    public boolean update(StudentDto e) {
-        return false;
+    public StudentDto update(StudentDto e) {
+        return new StudentDto();
     }
 
     @Override
@@ -23,6 +28,11 @@ public class StudentServiceImpl implements StudentService{
 
     @Override
     public List<StudentDto> readAll() {
-        return null;
+        List list = new ArrayList<>();
+        list.add("imad");
+        list.add("ali");
+        list.add("zakaria");
+        list.add("said");
+        return list;
     }
 }
